@@ -4,6 +4,9 @@
   "runArgs": ["--init", "--privileged"],
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/environment,type=bind,consistency=cached",
   "workspaceFolder": "/home/vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
   // Configure tool-specific properties.
   "customizations": {
     // Configure properties specific to VS Code.
@@ -11,5 +14,6 @@
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": ["ms-azuretools.vscode-docker"]
     }
-  }
+  },
+  "postCreateCommand": "cd environment && docker compose up -d"
 }
