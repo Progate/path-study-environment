@@ -1,1 +1,1 @@
-GRANT ALL PRIVILEGES ON *.* TO 'user'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'path_user'@'%';
