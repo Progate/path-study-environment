@@ -1,8 +1,8 @@
-FROM mcr.microsoft.com/devcontainers/base:ubuntu-20.04
+FROM mcr.microsoft.com/devcontainers/base:ubuntu-22.04
 
 # SHELL ["/bin/bash", "-c"]
 
-RUN apt-get update && apt-get -y install curl git libgtk-3.0 libnss3 libdrm-dev libgbm-dev libasound2 sqlite3
+RUN apt-get update && apt-get -y install curl git libgtk-3.0 libnss3 libdrm-dev libgbm-dev libasound2 sqlite3 mysql-client
 
 USER vscode
 
