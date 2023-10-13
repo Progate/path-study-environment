@@ -5,8 +5,10 @@
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/environment,type=bind,consistency=cached",
   "workspaceFolder": "/home/vscode",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
   },
+  "forwardPorts": [3000, 8000],
   // Configure tool-specific properties.
   "customizations": {
     // Configure properties specific to VS Code.
@@ -15,5 +17,6 @@
       "extensions": ["ms-azuretools.vscode-docker"]
     }
   },
-  "postCreateCommand": "cd environment && docker compose up -d"
+  "postCreateCommand": "docker compose up -f ./environment/docker-compose.yml -d",
+  "postAttachCommand": "/bin/bash ./environment/.devcontainer/setup.sh"
 }
