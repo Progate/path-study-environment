@@ -17,6 +17,6 @@
       "extensions": ["ms-azuretools.vscode-docker"]
     }
   },
-  "postCreateCommand": "docker compose up -f ./environment/docker-compose.yml -d",
+  "postCreateCommand": "docker-compose up -f ./environment/docker-compose.yml -d",
   "postAttachCommand": "/bin/bash ./environment/.devcontainer/setup.sh"
 }
