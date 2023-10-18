@@ -6,7 +6,10 @@
   "workspaceFolder": "/home/vscode",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
   },
   "forwardPorts": [3000, 8000],
   // Configure tool-specific properties.
@@ -14,9 +17,18 @@
     // Configure properties specific to VS Code.
     "vscode": {
       // Add the IDs of extensions you want installed when the container is created.
-      "extensions": ["ms-azuretools.vscode-docker"]
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "github.copilot",
+        "loiane.ts-extension-pack",
+        "mechatroner.rainbow-csv",
+        "mikestead.dotenv",
+        "ms-vsliveshare.vsliveshare",
+        "ms-vscode.live-server",
+        "prisma.prisma"
+      ]
     }
   },
-  "postCreateCommand": "cd ./environment && docker-compose up -d",
-  "postAttachCommand": "/bin/bash ./environment/.devcontainer/setup.sh"
+  "postCreateCommand": "/bin/bash ./environment/.devcontainer/postCreateCommand.sh",
+  "postAttachCommand": "/bin/bash ./environment/.devcontainer/postAttachCommand.sh"
 }
