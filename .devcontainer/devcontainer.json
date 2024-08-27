@@ -1,5 +1,5 @@
 {
-  "name": "express-generated-devcontainer",
+  "name": "path-study-environment",
   "build": { "dockerfile": "Dockerfile" },
   "runArgs": ["--init", "--privileged"],
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/environment,type=bind,consistency=cached",
