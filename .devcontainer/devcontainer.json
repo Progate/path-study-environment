@@ -20,10 +20,12 @@
       "extensions": [
         "dbaeumer.vscode-eslint",
         "github.copilot",
+        "golang.go",
         "loiane.ts-extension-pack",
         "mechatroner.rainbow-csv",
         "mhutchie.git-graph",
         "mikestead.dotenv",
+        "ms-python.python",
         "ms-vsliveshare.vsliveshare",
         "ms-vscode.live-server",
         "prisma.prisma"
