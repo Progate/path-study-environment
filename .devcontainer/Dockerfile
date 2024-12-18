@@ -21,6 +21,6 @@ RUN $HOME/.nodenv/bin/nodenv global 18.17.1
 RUN curl -sSfL https://assets.path.progate.com/cli-installer/out/setup.sh | bash -s -- -y
 
 # AWS CLI
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-RUN unzip awscliv2.zip
-RUN sudo ./aws/install
+# RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+# RUN unzip awscliv2.zip
+# RUN sudo ./aws/install
