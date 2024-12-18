@@ -2,9 +2,9 @@ FROM mcr.microsoft.com/devcontainers/base:ubuntu-22.04
 
 # SHELL ["/bin/bash", "-c"]
 
-RUN apt-get update && apt-get -y install curl git libgtk-3.0 libnss3 libdrm-dev libgbm-dev libasound2 sqlite3 mysql-client unzip
-
 USER vscode
+
+RUN apt-get update && apt-get -y install curl git libgtk-3.0 libnss3 libdrm-dev libgbm-dev libasound2 sqlite3 mysql-client unzip
 
 # nodenv
 RUN git clone https://github.com/nodenv/nodenv.git ~/.nodenv
@@ -21,6 +21,5 @@ RUN $HOME/.nodenv/bin/nodenv global 18.17.1
 RUN curl -sSfL https://assets.path.progate.com/cli-installer/out/setup.sh | bash -s -- -y
 
 # AWS CLI
-RUN curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o $HOME/awscliv2.zip
-# RUN unzip $HOME/awscliv2.zip
-# RUN sudo ./aws/install
+RUN curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o $HOME/awscliv2.zip && unzip $HOME/awscliv2.zip
+# RUN sudo $HOME/aws/install
