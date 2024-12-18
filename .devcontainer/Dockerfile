@@ -22,5 +22,5 @@ RUN curl -sSfL https://assets.path.progate.com/cli-installer/out/setup.sh | bash
 
 # AWS CLI
 RUN curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o $HOME/awscliv2.zip
-RUN unzip $HOME/awscliv2.zip
+# RUN unzip $HOME/awscliv2.zip
 # RUN sudo ./aws/install
