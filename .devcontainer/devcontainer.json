@@ -1,15 +1,17 @@
 {
-  "name": "express-generated-devcontainer",
+  "name": "progate-path-dev-container",
   "build": { "dockerfile": "Dockerfile" },
   "runArgs": ["--init", "--privileged"],
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/environment,type=bind,consistency=cached",
   "workspaceFolder": "/home/vscode",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2.9.0": {},
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/sshd:1": {
-      "version": "latest"
-    }
+    "ghcr.io/devcontainers/features/sshd:1": {},
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
+    "ghcr.io/warrenbuckley/codespace-features/sqlite:1": {}
   },
   "forwardPorts": [3000, 8000],
   // Configure tool-specific properties.

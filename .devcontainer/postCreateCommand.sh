@@ -1,4 +1,3 @@
 #!/bin/bash
-
 sudo git config --system core.editor 'code --wait'
-cd ./environment && docker-compose up -d
+docker compose -f $HOME/environment/docker-compose.yml up -d
