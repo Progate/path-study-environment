@@ -1,17 +1,10 @@
-FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04
+FROM mcr.microsoft.com/devcontainers/base:ubuntu-22.04
 
 SHELL ["/bin/bash", "-c"]
 
 USER vscode
 
-RUN sudo apt-get update && sudo apt-get install -y curl \
-    libgtk-3-dev \
-    libnotify-dev \
-    libnss3 \
-    libxss1 \
-    libasound2t64 \
-    mysql-client \
-    unzip
+RUN sudo apt update && sudo apt install -y libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 chromium-browser 
 
 # Progate CLI
 RUN curl -sSfL https://assets.path.progate.com/cli-installer/out/setup.sh | bash -s -- -y
