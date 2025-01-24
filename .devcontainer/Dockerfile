@@ -27,5 +27,6 @@ RUN git clone https://github.com/nodenv/node-build.git "$HOME/.nodenv"/plugins/n
 RUN $HOME/.nodenv/bin/nodenv install 22.12.0
 RUN $HOME/.nodenv/bin/nodenv global 22.12.0
 
+# Puppeteer の設定
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
