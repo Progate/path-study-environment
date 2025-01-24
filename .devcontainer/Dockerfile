@@ -1,10 +1,17 @@
-FROM mcr.microsoft.com/devcontainers/base:ubuntu-22.04
+FROM mcr.microsoft.com/devcontainers/base:debian
 
 SHELL ["/bin/bash", "-c"]
 
 USER vscode
 
-RUN sudo apt update && sudo apt install -y libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 chromium-browser 
+RUN sudo apt update && sudo apt install -y \
+    libgtk-3-dev \
+    libnotify-dev \
+    libgconf-2-4 \
+    libnss3 \
+    libxss1 \
+    libasound2 \
+    chromium
 
 # Progate CLI
 RUN curl -sSfL https://assets.path.progate.com/cli-installer/out/setup.sh | bash -s -- -y
@@ -20,3 +27,5 @@ RUN git clone https://github.com/nodenv/node-build.git "$HOME/.nodenv"/plugins/n
 RUN $HOME/.nodenv/bin/nodenv install 22.12.0
 RUN $HOME/.nodenv/bin/nodenv global 22.12.0
 
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
